@@ -1,0 +1,32 @@
+[
+  {
+    "name": "John Smith",
+    "teks": "Hey, how are you doing today?",
+    "photo_url": "https://randomuser.me/api/portraits/men/75.jpg",
+    "time": "20:57"
+  },
+  {
+    "name": "Jane Doe",
+    "teks": "I will send you the documents tomorrow.",
+    "photo_url": "https://randomuser.me/api/portraits/women/75.jpg",
+    "time": "19:19"
+  },
+  {
+    "name": "Michael Johnson",
+    "teks": "Can we reschedule the meeting to next week?",
+    "photo_url": "https://randomuser.me/api/portraits/men/76.jpg",
+    "time": "17:32"
+  },
+  {
+    "name": "Emily Williams",
+    "teks": "Dont forget about the dinner tonight.",
+    "photo_url": "https://randomuser.me/api/portraits/women/76.jpg",
+    "time": "16:10"
+  },
+  {
+    "name": "William Brown",
+    "teks": "I have completed the project, let me know your feedback.",
+    "photo_url": "https://randomuser.me/api/portraits/men/77.jpg",
+    "time": "15:45"
+  }
+]

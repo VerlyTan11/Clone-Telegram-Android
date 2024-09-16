@@ -1,0 +1,44 @@
+{
+  "contacts": [
+    {
+      "name": "Andi",
+      "image": "https://randomuser.me/api/portraits/men/1.jpg",
+      "last_seen": "14:30"
+    },
+    {
+      "name": "Budi",
+      "image": "https://randomuser.me/api/portraits/men/2.jpg",
+      "last_seen": "09:15"
+    },
+    {
+      "name": "Citra",
+      "image": "https://randomuser.me/api/portraits/women/1.jpg",
+      "last_seen": "22:45"
+    },
+    {
+      "name": "Dewi",
+      "image": "https://randomuser.me/api/portraits/women/2.jpg",
+      "last_seen": "12:00"
+    },
+    {
+      "name": "Eka",
+      "image": "https://randomuser.me/api/portraits/men/3.jpg",
+      "last_seen": "18:30"
+    },
+    {
+      "name": "Faris",
+      "image": "https://randomuser.me/api/portraits/men/4.jpg",
+      "last_seen": "16:00"
+    },
+    {
+      "name": "Gita",
+      "image": "https://randomuser.me/api/portraits/women/3.jpg",
+      "last_seen": "10:15"
+    },
+    {
+      "name": "Haris",
+      "image": "https://randomuser.me/api/portraits/men/5.jpg",
+      "last_seen": "20:45"
+    }
+  ]
+}
