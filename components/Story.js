@@ -28,10 +28,7 @@ const Story = () => {
         </View>
       )}
 
-      {/* Gambar Profil */}
       <Image source={item.image} className="w-16 h-16 rounded-full border-2 border-gray-300" />
-
-      {/* Jika item adalah 'My Story', tambahkan ikon plus di atas gambar */}
       {item.name === 'My Story' && (
         <View className="absolute bottom-5 right-0">
           <Image source={require('../assets/plus.png')} className="w-6 h-6" />

@@ -4,7 +4,7 @@
     "teks": "Hey, how are you doing today?",
     "photo_url": "https://randomuser.me/api/portraits/men/75.jpg",
     "time": "20:57",
-    "seen": "yes",
+    "seen": "no",
     "chat": 5210
   },
   {
@@ -28,7 +28,7 @@
     "teks": "Dont forget about the dinner tonight.",
     "photo_url": "https://randomuser.me/api/portraits/women/76.jpg",
     "time": "31 Jan", 
-    "seen": "yes",
+    "seen": "no",
     "chat": 3
   },
   {

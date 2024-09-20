@@ -1,50 +1,65 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, FlatList } from 'react-native';
+import { View, Text, Image, FlatList, Pressable } from 'react-native';
 import contactsData from './../kontak.json';
 import chatsData from './../data.json';
 import doubleCheckImage from './../assets/double-check.png';
 
-// Komponen ChatItem
-const ChatItem = ({ name, teks, photo_url, time, seen, chat, isLast }) => (
-  <View className="flex-row items-center p-2 mx-2">
-    <Image source={{ uri: photo_url }} className="w-14 h-14 rounded-full mb-2" />
-    <View 
-      className={`flex-1 mr-2 ml-4 pb-4 border-b-2 ${isLast ? 'border-b-0' : 'border-b-gray'}`}
+const ChatItem = ({ name, teks, photo_url, time, seen, chat, isLast }) => {
+  return (
+    <Pressable
+      className="flex-row items-center p-2 mx-2"
+      onHoverIn={() => console.log('Hovered in!')}
+      onHoverOut={() => console.log('Hovered out!')}
+      android_ripple={{ color: '#ddd' }}
+      style={({ Hovered }) => [
+        { backgroundColor: Hovered ? '#e5e5e5' : 'transparent' }
+      ]}
     >
-      <View className="flex-row items-center justify-between">
-        <Text className="text-lg font-bold text-black">{name}</Text>
-        <View className="flex-row items-center">
-          {seen === "yes" && (
-            <Image source={doubleCheckImage} style={{ width: 16, height: 16, marginRight: 4 }} />
+      <Image source={{ uri: photo_url }} className="w-14 h-14 rounded-full mb-2" />
+      <View className={`flex-1 mr-2 ml-4 pb-4 border-b-2 ${isLast ? 'border-b-0' : 'border-b-gray'}`}>
+        <View className="flex-row items-center justify-between">
+          <Text className="text-lg font-bold text-black">{name}</Text>
+          <View className="flex-row items-center">
+            {seen === 'yes' && (
+              <Image source={doubleCheckImage} style={{ width: 16, height: 16, marginRight: 4 }} />
+            )}
+            <Text className="text-sm text-gray-500">{time}</Text>
+          </View>
+        </View>
+        <View className="flex-row items-center mt-2">
+          <Text className="text-sm text-gray-500 flex-1" numberOfLines={1} ellipsizeMode="tail">
+            {teks}
+          </Text>
+          {chat > 0 && (
+            <View style={{ backgroundColor: '#4fd05c', borderRadius: 12, paddingHorizontal: 8, paddingVertical: 4, marginLeft: 8 }}>
+              <Text style={{ color: 'white', fontWeight: 'bold' }}>{chat}</Text>
+            </View>
           )}
-          <Text className="text-sm text-gray-500">{time}</Text>
         </View>
       </View>
+    </Pressable>
+  );
+};
 
-      <View className="flex-row items-center mt-2">
-        <Text className="text-sm text-gray-500 flex-1" numberOfLines={1} ellipsizeMode="tail">
-          {teks}
-        </Text>
-        {chat > 0 && (
-          <View style={{ backgroundColor: '#4fd05c', borderRadius: 12, paddingHorizontal: 8, paddingVertical: 4, marginLeft: 8 }}>
-            <Text style={{ color: 'white', fontWeight: 'bold' }}>{chat}</Text>
-          </View>
-        )}
+const ContactItem = ({ name, image, last_seen }) => {
+  return (
+    <Pressable
+      className="flex-row items-center p-2 mx-2"
+      onHoverIn={() => console.log('Hovered in!')}
+      onHoverOut={() => console.log('Hovered out!')}
+      android_ripple={{ color: '#ddd' }}
+      style={({ Hovered }) => [
+        { backgroundColor: Hovered ? '#e5e5e5' : 'transparent' }
+      ]}
+    >
+      <Image source={{ uri: image }} className="w-14 h-14 rounded-full mr-3" />
+      <View className="flex-col">
+        <Text className="font-bold text-lg">{name}</Text>
+        <Text className="text-gray-500 text-sm">terlihat pada {last_seen}</Text>
       </View>
-    </View>
-  </View>
-);
-
-// Komponen ContactItem
-const ContactItem = ({ name, image, last_seen }) => (
-  <View className="flex-row items-center p-2 mx-2">
-    <Image source={{ uri: image }} className="w-14 h-14 rounded-full mr-3" />
-    <View className="flex-col">
-      <Text className="font-bold text-lg">{name}</Text>
-      <Text className="text-gray-500 text-sm">terlihat pada {last_seen}</Text>
-    </View>
-  </View>
-);
+    </Pressable>
+  );
+};
 
 const UnifiedList = () => {
   const [data, setData] = useState([]);
