@@ -1,16 +1,19 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { styled } from 'nativewind';
+import { useNavigation } from '@react-navigation/native';
 
 const Header = () => {
+  const navigation = useNavigation();
+
   return (
     <View className="flex-row items-center justify-between px-4 pt-8 bg-default-blue">
       <TouchableOpacity>
-        <Image source={require('../assets/menu.png')} className="w-6 h-6" />
+        <Image source={require('../assets/menu.png')} className="w-5 h-5" />
       </TouchableOpacity>
 
-      <Text className="text-white text-xl mr-44 font-bold flex-1 text-center">Telegram</Text>
+      <Text className="text-white text-xl mr-44 font-bold flex-1 text-center"></Text>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Search')}>
         <Image source={require('../assets/search.png')} className="w-5 h-5" />
       </TouchableOpacity>
     </View>
