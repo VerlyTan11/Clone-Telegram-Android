@@ -16,12 +16,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/telegram.gif",
+        "foregroundImage": "./assets/telegram.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "telegram": "./assets/telegram.gif"
+      "telegram": "./assets/telegram.png"
     }
   }
 }
