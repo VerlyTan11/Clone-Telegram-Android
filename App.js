@@ -4,13 +4,24 @@ import Header from './components/Header';
 import Story from './components/Story';
 import UnifiedList from './components/UnifiedList';
 import SearchScreen from './components/SearchScreen';
-import SplashScreen from './components/SplashScreen'; // Import SplashScreen
+import SplashScreen from './components/SplashScreen'; 
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+
+// Komponen HomeScreen dengan Header, Story, dan UnifiedList
+function HomeScreen() {
+  return (
+    <SafeAreaView className="flex-1">
+      <Header />
+      <Story />
+      <UnifiedList />
+    </SafeAreaView>
+  );
+}
 
 export default function App() {
   return (
@@ -25,7 +36,7 @@ export default function App() {
           }} 
         />
 
-        {/* HomeDrawer berisi Drawer Navigator */}
+        {/* Drawer Navigator berisi Home dan Search */}
         <Stack.Screen 
           name="HomeDrawer" 
           options={{
@@ -33,23 +44,16 @@ export default function App() {
           }}
         >
           {() => (
-            <Drawer.Navigator initialRouteName="HomeScreen">
-              {/* Screen Beranda */}
+            <Drawer.Navigator initialRouteName="Home">
+              {/* Screen Beranda (Home) */}
               <Drawer.Screen 
-                name="HomeScreen" // Nama unik untuk Home dalam Drawer Navigator
+                name="Home" 
+                component={HomeScreen} 
                 options={{
                   title: 'Home',
-                  headerShown: false,
+                  headerShown: false, // Menyembunyikan header default karena menggunakan custom Header
                 }}
-              >
-                {() => (
-                  <SafeAreaView className="flex-1">
-                    <Header />
-                    <Story />
-                    <UnifiedList />
-                  </SafeAreaView>
-                )}
-              </Drawer.Screen>
+              />
 
               {/* Screen Pencarian */}
               <Drawer.Screen 
@@ -57,7 +61,7 @@ export default function App() {
                 component={SearchScreen} 
                 options={{
                   title: 'Search',
-                  headerShown: false,
+                  headerShown: false, // Menyembunyikan header default karena menggunakan custom Header
                 }}
               />
             </Drawer.Navigator>
