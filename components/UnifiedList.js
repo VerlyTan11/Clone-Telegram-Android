@@ -16,7 +16,7 @@ const ChatItem = ({ name, teks, photo_url, time, seen, chat, isLast }) => {
       ]}
     >
       <Image source={{ uri: photo_url }} className="w-14 h-14 rounded-full mb-2" />
-      <View className={`flex-1 mr-2 ml-4 pb-4 border-b-2 ${isLast ? 'border-b-0' : 'border-b-gray'}`}>
+      <View className={`flex-1 mr-2 ml-4 pb-4 border-b-2 ${isLast ? 'border-b-0' : 'border-b-light-grey'}`}>
         <View className="flex-row items-center justify-between">
           <Text className="text-lg font-bold text-black">{name}</Text>
           <View className="flex-row items-center">
