@@ -8,6 +8,7 @@ import SplashScreen from './components/SplashScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { createStackNavigator } from '@react-navigation/stack';
+import CustomDrawer from './components/CustomDrawer'; // Import CustomDrawer
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -36,7 +37,7 @@ export default function App() {
           }} 
         />
 
-        {/* Drawer Navigator berisi Home dan Search */}
+        {/* Drawer Navigator dengan Custom Drawer */}
         <Stack.Screen 
           name="HomeDrawer" 
           options={{
@@ -44,7 +45,10 @@ export default function App() {
           }}
         >
           {() => (
-            <Drawer.Navigator initialRouteName="Home">
+            <Drawer.Navigator
+              initialRouteName="Home"
+              drawerContent={(props) => <CustomDrawer {...props} />} // Menggunakan CustomDrawer
+            >
               {/* Screen Beranda (Home) */}
               <Drawer.Screen 
                 name="Home" 

@@ -7,7 +7,7 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/telegram.png",
+      "image": "./assets/telegram-1.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -16,12 +16,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/telegram.png",
+        "foregroundImage": "./assets/telegram-1.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
-      "telegram": "./assets/telegram.png"
+      "telegram": "./assets/telegram-1.png"
     }
   }
 }

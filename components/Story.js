@@ -2,7 +2,7 @@ import React from 'react';
 import { View, FlatList, Image, Text } from 'react-native';
 
 const stories = [
-  { id: '1', name: 'My Story', image: require('../assets/user.png') },
+  { id: '1', name: 'My Story' }, // Hapus 'image' untuk My Story
   { id: '2', name: 'Avi', image: require('../assets/user.png') },
 ];
 
@@ -22,13 +22,21 @@ const Story = () => {
               top: -3,
               left: -35,
               zIndex: -1,
-              borderStyle: 'dashed',
             }}
           />
         </View>
       )}
 
-      <Image source={item.image} className="w-16 h-16 rounded-full border-2 border-gray-300" />
+      {/* Cek apakah ini 'My Story' atau bukan */}
+      {item.name === 'My Story' ? (
+        <View className="bg-profile-blue w-16 h-16 rounded-full justify-center items-center">
+          <Text className="text-2xl font-bold text-white">BT</Text>
+        </View>
+      ) : (
+        <Image source={item.image} className="w-16 h-16 rounded-full border-2 border-gray-300" />
+      )}
+
+      {/* Icon Plus untuk 'My Story' */}
       {item.name === 'My Story' && (
         <View className="absolute bottom-5 right-0">
           <Image source={require('../assets/plus.png')} className="w-6 h-6" />
