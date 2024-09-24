@@ -4,15 +4,21 @@ import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
 
 export default function CustomDrawer(props) {
   return (
-    <DrawerContentScrollView {...props} contentContainerStyle={{ flex: 1 }}>
+    <DrawerContentScrollView contentContainerStyle={{ flex: 1 }}>
       <View className="p-4 bg-default-blue">
         <View className="flex-col">
-          <View className="bg-profile-blue w-12 h-12 rounded-full justify-center items-center">
-            <Text className="text-2xl font-bold text-white">BT</Text>
+          <View className="flex-row justify-between items-center">
+            <View className="bg-profile-blue w-12 h-12 rounded-full justify-center items-center">
+              <Text className="text-2xl font-bold text-white">BT</Text>
+            </View>
+            <Image source={require('../assets/moon.png')} className="w-5 h-5" />
           </View>
-          <View className="mt-4">
-            <Text className="text-base font-semibold text-white">Beverly Tan</Text>
-            <Text className="text-sm text-white">+62 812 92452592</Text>
+          <View className="mt-6 flex-row justify-between items-center">
+            <View>
+              <Text className="text-sm font-semibold text-white">Beverly Tan</Text>
+              <Text className="text-xs text-white">+62 812 92452592</Text>
+            </View>
+            <Image source={require('../assets/down-arrow.png')} className="w-5 h-5" />
           </View>
         </View>
       </View>
