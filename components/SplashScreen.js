@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const SplashScreen = () => {
   const navigation = useNavigation();
-  const moveAnim = useRef(new Animated.ValueXY({ x: -150, y: 150 })).current; // Animasi posisi gambar
+  const moveAnim = useRef(new Animated.ValueXY({ x: -100, y: 150 })).current; // Animasi posisi gambar
   const scaleAnim = useRef(new Animated.Value(0)).current; // Animasi ukuran gambar
 
   // Fungsi untuk menjalankan animasi
@@ -13,7 +13,7 @@ const SplashScreen = () => {
     // Animasi perpindahan gambar dari kiri bawah ke tengah
     Animated.parallel([
       Animated.timing(moveAnim, {
-        toValue: { x: 0, y: 0 }, // Bergerak ke tengah layar
+        toValue: { x: -10, y: 10 }, // Bergerak ke tengah layar
         duration: 2000,
         easing: Easing.out(Easing.quad),
         useNativeDriver: true,
