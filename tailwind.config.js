@@ -14,7 +14,8 @@ module.exports = {
       white: "#fff",
       "light-dark": "#242426",
       dark : "#181818",
-      darken : "#95999c"
+      darken : "#95999c",
+      black : "#000",
     },
   },
   plugins: [],

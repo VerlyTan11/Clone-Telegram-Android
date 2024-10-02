@@ -1,12 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, FlatList, Image, Text } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const stories = [
-  { id: '1', name: 'My Story' }, // Hapus 'image' untuk My Story
+  { id: '1', name: 'My Story' },
   { id: '2', name: 'Avi', image: require('../assets/user.png') },
 ];
 
 const Story = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Load theme from AsyncStorage when the app starts
+  useEffect(() => {
+    const loadTheme = async () => {
+      const storedTheme = await AsyncStorage.getItem('theme');
+      if (storedTheme) {
+        setIsDarkMode(storedTheme === 'dark');
+      }
+    };
+    loadTheme();
+  }, []);
+
   const renderItem = ({ item }) => (
     <View className="items-center mr-4 my-6 relative">
       {item.name !== 'My Story' && (
@@ -43,12 +57,12 @@ const Story = () => {
         </View>
       )}
 
-      <Text className="mt-1 text-xs text-white">{item.name}</Text>
+      <Text className={`mt-1 text-xs ${isDarkMode ? 'text-white' : 'text-gray-300'}`}>{item.name}</Text>
     </View>
   );
 
   return (
-    <View className="bg-default-blue">
+    <View className={`${isDarkMode ? 'bg-light-dark' : 'bg-default-blue'}`}>
       <FlatList
         horizontal
         data={stories}
