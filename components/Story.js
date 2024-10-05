@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, Image, Text } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const stories = [
   { id: '1', name: 'My Story' },
@@ -9,17 +8,6 @@ const stories = [
 
 const Story = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Load theme from AsyncStorage when the app starts
-  useEffect(() => {
-    const loadTheme = async () => {
-      const storedTheme = await AsyncStorage.getItem('theme');
-      if (storedTheme) {
-        setIsDarkMode(storedTheme === 'dark');
-      }
-    };
-    loadTheme();
-  }, []);
 
   const renderItem = ({ item }) => (
     <View className="items-center mr-4 my-6 relative">

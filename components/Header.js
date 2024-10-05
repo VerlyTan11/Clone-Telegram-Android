@@ -6,8 +6,7 @@ const Header = ({ isDarkMode }) => {
   const navigation = useNavigation();
 
   return (
-    <View className={`flex-row items-center justify-between px-4 pt-8 ${isDarkMode ? 'bg-darken' : 'bg-default-blue'}`}>
-      {/* Menambahkan fungsi untuk membuka drawer */}
+    <View className="flex-row items-center justify-between px-4 pt-8 bg-default-blue">
       <TouchableOpacity onPress={() => navigation.openDrawer()}>
         <Image source={require('../assets/menu.png')} className="w-5 h-5" />
       </TouchableOpacity>
